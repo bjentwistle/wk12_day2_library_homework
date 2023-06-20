@@ -13,9 +13,11 @@ public class LibraryTest {
     private ArrayList<Book> stock;
 
     @Before
-    public void setUp() {
-        Book book = new Book("Persuasion", "Jane Austen", "Period Drama");
-        Library library = new Library(1000, stock);
+    public void before() {
+        book = new Book("Persuasion", "Jane Austen", "Period Drama");
+        library = new Library(1000, stock);
+        library.add(book);
+        library.add(book);
     }
     @Test
     public void bookHasTitle(){
@@ -31,6 +33,10 @@ public class LibraryTest {
     }
     @Test
     public void libraryHasStock(){
-        assertEquals(0, library.bookCount());
+        assertEquals(2, library.bookCount());
+    }
+    @Test
+    public void libraryHasCapacity(){
+        assertEquals(true, library.getCapacity());
     }
 }
