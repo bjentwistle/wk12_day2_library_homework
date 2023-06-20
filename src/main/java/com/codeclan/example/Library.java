@@ -16,10 +16,12 @@ public class Library {
     public void add(Book book) {
         this.stock.add(book);
     }
-    public boolean getCapacity() {
+    public boolean getCapacity(Book book) {
         if (this.stock.size() < this.capacity) {
+            this.stock.add(book);
             return true;
         } else {
+            System.out.println("Sorry the Library is full");
             return false;
         }
     }

@@ -37,6 +37,7 @@ public class LibraryTest {
     }
     @Test
     public void libraryHasCapacity(){
-        assertEquals(true, library.getCapacity());
+        assertEquals(true, library.getCapacity(book));
+        assertEquals(3, library.bookCount()); //book is added to library
     }
 }
